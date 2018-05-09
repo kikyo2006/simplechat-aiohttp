@@ -460,3 +460,9 @@ iframe {
     opacity: 1;
   }
 }
+/* Custom css */
+#subscribe {
+  height: 200px;
+  width: 100%;
+  overflow: scroll;
+}

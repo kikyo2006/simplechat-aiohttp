@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Begin chat{% endblock %}
+
+{% block body_content %}
+    <div id='subscribe'>
+        {% for mes in messages%}
+        <p>[{{ mes['time'].strftime('%H:%M:%S') }}] ({{ mes['user'] }}) {{ mes['msg'] }}</p>
+        {% endfor %}
+    </div>
+    <div style="clear:both;width: 100%;">&nbsp;</div>
+    <div>
+        <input  type="text" id="message" autocomplete="off" style="border: 1px solid">
+        <input class="btn btn-primary" type="submit" id='submit' value="Send">
+        <input class="btn btn-default" type="button" id="signout" value="Sign Out">
+    </div>
+{% endblock %}
+
+{% block footerjs %}
+    <script src="{{ url('static', filename='js/socket.js') }}"></script>
+{% endblock %}
